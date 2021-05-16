@@ -2,13 +2,13 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:path/path.dart' as p;
+import 'package:path/path.dart' as path;
 
 import 'company_contact.dart';
 
 //SECTION 1 -- Build the file URL
 final targetFile =
-    File(p.join(p.dirname(Platform.script.toFilePath()), 'data.json'));
+    File(path.join(path.dirname(Platform.script.toFilePath()), 'data.json'));
 
 //SECTOIN 2 -- Our response model
 
@@ -57,7 +57,7 @@ int sortContacts(CompanyContact a, CompanyContact b, int sortIndex, bool asc) {
 // SECTION 4 -- The application startup code and webserver code
 
 Future main() async {
-  var server;
+  late final HttpServer server;
   late final List<CompanyContact> fileContent;
   if (await targetFile.exists()) {
     print('Serving data from $targetFile');
