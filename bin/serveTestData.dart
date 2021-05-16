@@ -6,8 +6,11 @@ import 'package:path/path.dart' as p;
 
 import 'company_contact.dart';
 
-var targetFile =
+//SECTION 1 -- Build the file URL
+final targetFile =
     File(p.join(p.dirname(Platform.script.toFilePath()), 'data.json'));
+
+//SECTOIN 2 -- Our response model
 
 class ResponseModel {
   final int totalRows;
@@ -22,6 +25,8 @@ class ResponseModel {
     };
   }
 }
+
+// SECTOIN 3 -- Sorting method for the data model
 
 int sortContacts(CompanyContact a, CompanyContact b, int sortIndex, bool asc) {
   late int result;
@@ -48,6 +53,8 @@ int sortContacts(CompanyContact a, CompanyContact b, int sortIndex, bool asc) {
   if (!asc) result *= -1;
   return result;
 }
+
+// SECTION 4 -- The application startup code and webserver code
 
 Future main() async {
   var server;
