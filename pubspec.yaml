@@ -1,6 +1,6 @@
-name: httpserver
-description: Sample HTTP clients and servers
-homepage: https://dart.dev/tutorials/server/httpserver
+name: serveTestData
+description: Sample HTTP REST API with static JSON file as backend
+homepage: https://devowl.de
 
 environment:
   sdk: '>=2.12.0 <3.0.0'
